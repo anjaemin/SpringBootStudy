@@ -8,6 +8,14 @@ example:
   list:
     - name: my name
       description: my description
+    - name: another name
+      description: another description
+  security:
+    username: admin
+    roles:
+      - USER
+      - ADMIN
+  remote-address: 192.168.1.1
 
 ---
 
