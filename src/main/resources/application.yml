@@ -1,0 +1,49 @@
+# default
+logging:
+  level:
+    io.leeroy.boot.springboot: DEBUG
+server:
+  port: 9000
+example:
+  list:
+    - name: my name
+      description: my description
+
+---
+
+spring:
+  profiles: local
+logging:
+  level:
+    io.leeroy.boot.springboot: TRACE
+
+---
+
+spring:
+  profiles: test
+server:
+  port: ${random.int[8000, 9000]}
+
+---
+
+spring:
+  profiles: dev
+example:
+  list:
+    - name: my another name
+#security:
+#  user:
+#    password: weak
+
+---
+
+spring:
+  profiles: prod
+logging:
+  level:
+    io.leeroy.boot.springboot: INFO
+server:
+  port: 5000  # AWS Elastic Beanstalk 에서는 5000번을 사용해야한다. 단 SERVER_PORT로 정의해야 한다.
+#security:
+#  user:
+#    password: strong

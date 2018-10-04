@@ -1,0 +1,4 @@
+#Listener
+org.springframework.context.ApplicationListener=\
+  io.leeroy.boot.springboot.listener.ApplicationStartingListener,\
+  io.leeroy.boot.springboot.listener.ApplicationReadyListener
